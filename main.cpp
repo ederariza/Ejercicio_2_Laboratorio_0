@@ -1,60 +1,57 @@
-
-#include <iostream>
-
+#include<iostream>
 using namespace std;
+int  i, j, k, N;
 
-int main(){
+char letra;
+int main(void){
 
-    char letra;
-    int i, j, k;
-    int N = 7;
+    cout<< "Ingrese el numero del tamano del triangulo mariposa: ";
+    cin>> N;
 
-    k = -N - 3;
-    for(j=1;  j<=N;  j++){
+    for(i=1; i<=N; i++){
+        letra = 65;
 
-        letra=65;
-
-        for(i=1;  i<=j;  i++){
+        for(j=1; j<=i; j++){
             cout<< letra;
-             letra++;
+            letra++;
         }
 
-        for(i= k;  i<j;  i++){
-            cout<< " ";
+        for(j=0; j<((N-i)*2-1); j++){
+            cout<<" ";
         }
-        k +=3;
 
-        for(i=1;  i<=j;  i++){
+        for(j=1; j<=i; j++){
             letra--;
 
-            if (letra != 65 + N -1){
-                 cout <<letra;}
+            if(letra != (65+N-1)){
+                cout<<letra;
+            }
         }
 
-     cout<< endl;
+        cout<< endl;
     }
 
-    k=1;
-    for(j=-N;  j<-1;  j++){
+    for(i=1; i<N; i++){
+        letra = 65;
 
-        for(i=j;  i<-1;  i++){
+        for(j=i; j<N; j++){
             cout<< letra;
-             letra++;
+            letra++;
         }
 
-        for(i=1;  i<=k;  i++){
+        for(j=0; j<=k; j++){
             cout<< " ";
         }
-        k +=2;
 
-        for(i=j;  i<-1;  i++){
+        k+=2;
+
+        for(j=i; j<N; j++){
             letra--;
             cout<< letra;
         }
 
-     cout<< endl;
-     letra=65;
-    }
+        cout<< endl;
 
-    return  0;
+    }
+return 0;
 }
