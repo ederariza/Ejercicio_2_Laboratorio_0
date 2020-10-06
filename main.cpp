@@ -19,29 +19,37 @@ A                                    A
 
 #include<iostream>
 using namespace std;
-int  i, j, k, N;
 
-char letra;
 int main(void){
 
+    //Declarando variables
+    int N, k = 0;
+    char letra;
+
+    //Capturando datos
     cout << "Ingrese el numero de dimension del triangulo mariposa: ";
     cin >> N;
 
-    for (i = 1; i <= N; i++){
+    //Ciclo for para formar la parte superior
+    for (int i = 1; i <= N; i++){
         letra = 65;
 
-        for (j = 1; j <= i; j++){
+        //Imprime las letras mayusculas en orden del abecedario sepradas por un espacio: A + " " + B ...
+        for (int j = 1; j <= i; j++){
             cout << letra << " ";
             letra++;
         }
 
-        for (j = 0; j < ((N-i)*2-1); j++){
+        //Imprime dos espacios: "  "
+        for (int j = 0; j < ((N-i)*2-1); j++){
             cout << "  ";
         }
 
-        for (j = 1; j <= i; j++){
+        //Imprime las letras mayusculas del abecedario en orden inverso sepradas por un espacio: ... B + " " + A
+        for (int j = 1; j <= i; j++){
             letra--;
 
+            //Imprime los caracteres del abecedario en froma inversa excepto el:  65 + N - 1 (codigo ACSII)
             if (letra != (65+N-1)){
                 cout << letra << " ";
             }
@@ -50,21 +58,25 @@ int main(void){
         cout << endl;
     }
 
-    for (i = 1; i < N; i++){
+    //Ciclo for para formar la parte inferior
+    for (int i = 1; i < N; i++){
         letra = 65;
 
-        for (j = i; j < N; j++){
+        //Imprime el triangulo del abecedario en  orden invertido y con una linea menos
+        for (int j = i; j < N; j++){
             cout << letra << " ";
             letra++;
         }
 
-        for (j = 0; j <= k; j++){
+        //Imprime dos espacios en blanco
+        for (int j = 0; j <= k; j++){
             cout << "  ";
         }
 
         k += 2;
 
-        for (j = i; j < N; j++){
+        //Imprime el triangulo del abecedario en  orden invertido y con una linea menos
+        for (int j = i; j < N; j++){
             letra--;
             cout << letra << " ";
         }
